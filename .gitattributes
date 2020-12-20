@@ -3,3 +3,5 @@
 *    text=auto
 
 *.cs text diff=csharp
+
+Passlockr/Scripts/* linguist-vendored
