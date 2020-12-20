@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Passlockr</h1>
+    <p class="lead">Passlockr é um site onde você pode armazenar suas senhas com segurança de ponta.</p>
+    @Html.ActionLink("Gerenciar senhas",
+        "Index",
+        "Senhas",
+        null,
+        new { @class = "btn btn-info" })
+</div>

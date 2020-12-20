@@ -1,0 +1,77 @@
+﻿@model Passlockr.Models.DadosSenha
+
+@{
+	ViewBag.Title = "Detalhes";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes do registro selecionado:</h2>
+
+<div>
+	<hr />
+	<dl class="dl-horizontal">
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Descricao)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Descricao)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Login)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Login)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.DataCriacao)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.DataCriacao)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.DataEdicao)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.DataEdicao)
+		</dd>
+
+	</dl>
+</div>
+
+<div class="btn-group btn-group-justified">
+
+	@Html.ActionLink("Voltar",
+		"Index",
+		"Senhas",
+		null,
+		new { @class = "btn btn-info" })
+
+	@Html.ActionLink("Obter",
+		"Obter",
+		"Senhas",
+		new { id = Model.Id },
+		new { @class = "btn btn-success" })
+
+	@Html.ActionLink(
+		"Editar",
+		"Editar",
+		"Senhas",
+		new { id = Model.Id },
+		new { @class = "btn btn-warning" })
+
+	@Html.ActionLink("Remover",
+		"ConfirmarRemocao",
+		"Senhas",
+		new { id = Model.Id },
+		new { @class = "btn btn-danger" })
+
+</div>
+

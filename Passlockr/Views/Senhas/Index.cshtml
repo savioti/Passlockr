@@ -1,0 +1,34 @@
+﻿@using Passlockr.Controllers
+@model IEnumerable<Passlockr.Models.DadosSenha>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Senhas armazenadas:</h2>
+
+<p>
+    @Html.ActionLink("Adicionar", nameof(SenhasController.Criar), null, new { @class="btn btn-success btn-block"} )
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(
+                item.Descricao,
+                nameof(Passlockr.Controllers.SenhasController.Detalhes),
+                "Senhas",
+                new { id = item.Id },
+                null)
+        </td>
+    </tr>
+}
+
+</table>

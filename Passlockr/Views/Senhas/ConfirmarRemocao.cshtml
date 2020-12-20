@@ -1,0 +1,58 @@
+﻿@using Passlockr.Controllers
+@model Passlockr.Models.DadosSenha
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Confirmar remoção</h2>
+
+<h3>Tem certeza que deseja remover este registro?</h3>
+<div class="container">
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCriacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCriacao)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEdicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataEdicao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm(nameof(SenhasController.Remover), "Senhas", new { id = Model.Id })) {
+        @Html.AntiForgeryToken()
+
+        <div class="btn-group">
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-primary" })
+            <input type="submit" value="Confirmar" class="btn btn-danger" />
+        </div>
+    }
+</div>
