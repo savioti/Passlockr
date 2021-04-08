@@ -5,3 +5,5 @@
 *.cs text diff=csharp
 
 Passlockr/Scripts/* linguist-vendored
+* linguist-vendored
+*.cs linguist-vendored=false
